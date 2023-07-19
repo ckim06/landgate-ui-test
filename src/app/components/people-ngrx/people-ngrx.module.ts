@@ -5,10 +5,13 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromPeople from './ngrx/reducers/people.reducer';
 import { PeopleEffects } from './ngrx/effects/people.effects';
 import { CommonModule } from '@angular/common';
+import {PeopleNgrxEditFormComponent} from './people-ngrx-edit-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [PeopleNgrxComponent],
+  declarations: [PeopleNgrxComponent, PeopleNgrxEditFormComponent],
   exports: [PeopleNgrxComponent],
-  imports: [CommonModule, StoreModule.forFeature(fromPeople.peopleFeatureKey, fromPeople.reducer), EffectsModule.forFeature([PeopleEffects])]
+  imports: [ReactiveFormsModule, CommonModule, StoreModule.forFeature(fromPeople.peopleFeatureKey, fromPeople.reducer), EffectsModule.forFeature([PeopleEffects])]
 })
 export class PeopleNgrxModule {
 }
