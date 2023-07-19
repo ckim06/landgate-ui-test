@@ -11,7 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import {PeopleNgrxModule} from './components/people-ngrx/people-ngrx.module'
+import {PeopleNgrxModule} from './components/people-ngrx/people-ngrx.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import {PeopleNgrxModule} from './components/people-ngrx/people-ngrx.module'
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
