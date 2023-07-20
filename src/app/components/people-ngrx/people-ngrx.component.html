@@ -5,7 +5,14 @@
         People
       </div>
       <div class="panel-body">
-        <table class="table table-condensed table-striped">
+
+        <div *ngIf="loading$ | async" class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <table class="table table-condensed table-striped" *ngIf="!(loading$ | async)">
           <thead>
             <tr>
               <th>Fist Name</th>

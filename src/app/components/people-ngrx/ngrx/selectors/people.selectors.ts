@@ -10,3 +10,8 @@ export const selectPeople = createSelector(
   selectPeopleState,
   (state: fromPeople.State) => state.people
 );
+
+export const isPeopleLoading = createSelector(
+  selectPeopleState,
+  (state: fromPeople.State) => state.loading
+);
