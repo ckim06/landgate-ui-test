@@ -12,7 +12,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {PeopleNgrxModule} from './components/people-ngrx/people-ngrx.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
   ],
   imports: [
     BrowserModule,
+    NgbCollapseModule,
     PeopleNgrxModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {

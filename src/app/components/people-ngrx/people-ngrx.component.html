@@ -15,19 +15,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr data-toggle="collapse" [data-target]="'#editForm'+i" class="accordion-toggle"
-              *ngFor="let person of (people$ | async); let i = index">
-              <td>{{person.firstName}}</td>
-              <td>{{person.lastName}}</td>
-              <td>{{person.age}}</td>
-              <td>{{person.workTile}}</td>
-            </tr>
-            <tr>
-              <td colspan="4" class="hiddenRow">
-                <div class="accordian-body collapse" [id]="'#editForm'+i">
-                  <app-people-edit-component [person]="person"></app-people-edit-component>
-                </div>
-            </tr>
+            <ng-container *ngFor="let person of (people$ | async);">
+              <tr data-toggle="collapse" class="accordion-toggle"
+                (click)="isRowCollapsed[person.id] = !isRowCollapsed[person.id]">
+                <td>{{person.firstName}}</td>
+                <td>{{person.lastName}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.workTitle}}</td>
+              </tr>
+              <tr [ngbCollapse]="!isRowCollapsed[person.id]">
+                <td colspan="4">
+                  <app-people-edit-component [person]="person" (cancelSave)="onCancelSave(person.id)"
+                    (save)="onSave(person.id)"></app-people-edit-component>
+                </td>
+              </tr>
+            </ng-container>
           </tbody>
         </table>
 

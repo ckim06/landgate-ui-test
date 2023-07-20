@@ -19,10 +19,16 @@ export const reducer = createReducer(
   on(PeopleActions.loadedPeople, (state, action) => {
     return {
       ...state,
-      people:action.people
+      people: action.people
     }
-    return state;
   }),
+  on(PeopleActions.savePerson, (state, { person }) => {
 
+    return {
+      ...state,
+      people: state.people.map((p) => p.id === person.id ? person : p)
+    };
+  }),
 );
+
 
