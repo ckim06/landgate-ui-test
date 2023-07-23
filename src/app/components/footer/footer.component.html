@@ -1,25 +1,50 @@
-<!-- TODO: make the footer a 3 column responsive layout -->
-<footer>
-    <div>
-        <h2>About</h2>
-        <ul>
-            <li><a href="#">Learn More</a></li>
-            <li><a href="#">People</a></li>
-            <li><a href="#">Careers</a></li>
+<div class="container">
+<footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>About</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Learn More</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">People</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
         </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Resources</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Docs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Contact</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Help</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sales</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div>
-        <h2 class="ft-title">Resources</h2>
-        <ul>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-    </div>
-    <div>
-        <h2>Contact</h2>
-        <ul>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Sales</a></li>
-        </ul>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2022 Landgate, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
     </div>
 </footer>
+</div>

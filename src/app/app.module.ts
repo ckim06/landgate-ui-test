@@ -8,9 +8,12 @@ import { reducers, metaReducers } from './reducers';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import {EffectsModule} from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import {PeopleNgrxModule} from './components/people-ngrx/people-ngrx.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
+    NgbCollapseModule,
+    PeopleNgrxModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       metaReducers
@@ -32,6 +37,7 @@ import { environment } from '../environments/environment';
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

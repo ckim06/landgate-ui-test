@@ -12,6 +12,6 @@ export const loadedPeople = createAction(
   (people: PersonModel[]) => ({people})
 )
 
-
+export const savePerson = createAction('[People] Saved',(person: PersonModel) => ({person}));
 
 

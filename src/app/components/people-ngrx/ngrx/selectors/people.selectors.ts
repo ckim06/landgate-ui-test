@@ -6,3 +6,12 @@ export const selectPeopleState = createFeatureSelector<fromPeople.State>(
 );
 
 // TODO: need to add a selector for people.
+export const selectPeople = createSelector(
+  selectPeopleState,
+  (state: fromPeople.State) => state.people
+);
+
+export const isPeopleLoading = createSelector(
+  selectPeopleState,
+  (state: fromPeople.State) => state.loading
+);
